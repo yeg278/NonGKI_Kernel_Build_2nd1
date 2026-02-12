@@ -6,8 +6,8 @@ on:
 
 env:
   # Device env
-  DEVICE_NAME : "nothing_phone_1"
-  DEVICE_CODENAME : "spacewar"
+  DEVICE_NAME : "oneplus9rt"
+  DEVICE_CODENAME : "martini"
 
   CUSTOM_CMDS : "CROSS_COMPILE=aarch64-linux-gnu- CLANG_TRIPLE=aarch64-linux-gnu-"
   EXTRA_CMDS : "LLVM=1 LLVM_IAS=1"
@@ -140,5 +140,6 @@ jobs:
       - name: ✏️ Upload Artifacts
 
         uses: ./.github/workflows/upload-files
+
 
 
