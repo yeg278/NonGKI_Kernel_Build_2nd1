@@ -1,4 +1,4 @@
-name: Build Xiaomi 11 (Evolution X 11 A16)
+name: Build mt21110 oneplus 9rt
 
 on:
   workflow_call:
@@ -6,14 +6,14 @@ on:
 
 env:
   # Device env
-  DEVICE_NAME : "xiaomi_11"
-  DEVICE_CODENAME : "venus"
+  DEVICE_NAME : "oneplus_9rt"
+  DEVICE_CODENAME : "martini"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
   EXTRA_CMDS : "LD=ld.lld"
 
-  KERNEL_SOURCE : "https://github.com/kamikaonashi/kernel_xiaomi_venus.git"
-  KERNEL_BRANCH : "16"
+  KERNEL_SOURCE : "https://github.com/LineageOS/android_kernel_oneplus_sm8350.git"
+  KERNEL_BRANCH : "lineage-23.2"
 
   CLANG_SOURCE : "https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b.git"
   CLANG_BRANCH : "lineage-20.0"
@@ -56,11 +56,11 @@ env:
   KERNELSU_METHOD: "shell" # shell, manual and only.
   KERNELSU_SUS_PATCH: "false" # if u need manual susfs patch to kernelsu.
 
-  PATCHES_SOURCE: "JackA1ltman/NonGKI_Kernel_Patches" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
-  PATCHES_BRANCH: "mi_kernel" # [your_branch] -> main
+  PATCHES_SOURCE: "" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
+  PATCHES_BRANCH: "" # [your_branch] -> main
 
-  SUSFS_FOLDER_FIXED: "mi11_evox_a16" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
-  SUSFS_PATCH_FIXED: "susfs_fixed" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
+  SUSFS_FOLDER_FIXED: "" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
+  SUSFS_PATCH_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
 
   REKERNEL_ENABLE: "true" # if u need Re:Kernel.
 
@@ -86,13 +86,13 @@ env:
   SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "true" # Merge config files.
-  MERGE_CONFIG_FILES: "vendor/venus_QGKI.config,vendor/xiaomi_QGKI.config"
+  MERGE_CONFIG_FILES: "vendor/lahaina_QGKI.config,vendor/oplus_QGKI.config"
 
   FREE_MORE_SPACE: "false" # if u want get more space, enabled it.
 
 jobs:
   build-kernel:
-    name: Xiaomi 11 (Evolution X 11 A16)
+    name: Oneplus-9rt-lineageos23.2
     runs-on: ubuntu-latest # u can changed to ubuntu 22.04, and need container set ubuntu-latest
     # container: archlinux/archlinux:latest # if u need use arch linux -> archlinux/archlinux:latest or ubuntu 20.04 -> ubuntu:focal
     env:
