@@ -46,7 +46,7 @@ env:
   NEED_DTBO : false
   NEED_SAFE_DTBO : false
 
-  ROM_TEXT : "evolution_x_a16"
+  ROM_TEXT : "lineageos23.2_a16"
 
   # Other env
   PYTHON_VERSION: "3" # Only 2(Ubuntu 22.04 and Ubuntu 20.04) or 3(Any OS Versions).
@@ -54,7 +54,7 @@ env:
   PACK_METHOD: "Anykernel3" # Anykernel3 need SOURCE and BRANCH, MKBOOTIMG needn't it.
 
   KERNELSU_METHOD: "shell" # shell, manual and only.
-  KERNELSU_SUS_PATCH: "false" # if u need manual susfs patch to kernelsu.
+  KERNELSU_SUS_PATCH: "true" # if u need manual susfs patch to kernelsu.
 
   PATCHES_SOURCE: "" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
   PATCHES_BRANCH: "" # [your_branch] -> main
